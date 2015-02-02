@@ -35,7 +35,15 @@
     <servlet-name>sign_up</servlet-name>
     <url-pattern>/sign_up.do</url-pattern>
   </servlet-mapping>
-    
+
+          <servlet>
+    <servlet-name>sign_out</servlet-name>
+    <servlet-class>com.example.web.Sign_out</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sign_out</servlet-name>
+    <url-pattern>/sign_out.do</url-pattern>
+  </servlet-mapping>    
     
     <servlet>
     <servlet-name>Controller</servlet-name>
@@ -45,5 +53,15 @@
     <servlet-name>Controller</servlet-name>
     <url-pattern>/temp_page</url-pattern>
   </servlet-mapping>
+  
+      <servlet>
+    <servlet-name>Course_upload</servlet-name>
+    <servlet-class>com.example.web.Course_upload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Course_upload</servlet-name>
+    <url-pattern>/cupload.do</url-pattern>
+  </servlet-mapping>
+  
   
 </web-app>

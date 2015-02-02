@@ -17,6 +17,7 @@ public class student_log_in extends HttpServlet {
     String lastname= null;
       String email_taken=null;
       boolean foundCookie = false;
+      boolean cookie_test_var=false;
     String email = request.getParameter("email");
     String password = request.getParameter("password");
     
@@ -45,25 +46,34 @@ public class student_log_in extends HttpServlet {
                  }
                */  
                 
-        
+    if (email_taken==null || email==null){
+        cookie_test_var=false;
+    }
+    else if(!email_taken.equals(email)){
+        cookie_test_var=false;
+    }
+    else{cookie_test_var=true;}
+    
+    
+    
         if ("-1".equals(id_student)) {
-     
+            
         }
         else { 
-            if (!foundCookie) {
-            Cookie cookie1 = new Cookie("id_student", id_student);
-            cookie1.setMaxAge(60);
-            response.addCookie(cookie1); 
-             Cookie cookie2 = new Cookie("firstname", firstname);
-            cookie2.setMaxAge(60);
-            response.addCookie(cookie2); 
-             Cookie cookie3 = new Cookie("lastname", lastname);
-            cookie3.setMaxAge(60);
-            response.addCookie(cookie3); 
-             Cookie cookie4 = new Cookie("email", email_taken);
-            cookie4.setMaxAge(60);
-            response.addCookie(cookie4); 
-        }
+            if (!foundCookie && cookie_test_var) { //an exei vrei cookie dhladh foundCookie=true tote den ftiaxnei kainourio, 8eloume na ftiaxnei Cookie mono an den exei vrei allo kai mono an exei vrei kataxwrish sthn vash
+                Cookie cookie1 = new Cookie("id_student", id_student);
+                cookie1.setMaxAge(600);
+                response.addCookie(cookie1); 
+                 Cookie cookie2 = new Cookie("firstname", firstname);
+                cookie2.setMaxAge(600);
+                response.addCookie(cookie2); 
+                 Cookie cookie3 = new Cookie("lastname", lastname);
+                cookie3.setMaxAge(600);
+                response.addCookie(cookie3); 
+                 Cookie cookie4 = new Cookie("email", email_taken);
+                cookie4.setMaxAge(600);
+                response.addCookie(cookie4); 
+            }
         }
         
     // The results will be passed back (as an attribute) to the JSP view

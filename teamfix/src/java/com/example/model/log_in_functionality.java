@@ -71,7 +71,7 @@ ResultSet rows = pstmt.executeQuery(); // "rows" save the affected rows
             email_taken=rows.getString(4);
         }
 
-        if("".equals(userid)){
+        if("".equals(userid) || userid==null){
         userid="-1";
         firstname="-1";
         lastname="-1";

@@ -3,7 +3,7 @@
 <title>TeamFix</title>
 <body>
  <div class="wrapper">   
- <%@ include file="header2.html" %>
+ <%@ include file="header.html" %>
      
     <div class="content">
         <div id="main_content">

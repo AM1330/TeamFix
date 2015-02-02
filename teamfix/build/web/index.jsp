@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <html>
     <link href="/style.css" rel="stylesheet" type="text/css"/>
 
@@ -13,7 +14,7 @@
     <div class="content">
         <div id="login">
         <form method="POST" action="log_in.do">
-            <center><b>Sign in in</b><br><br>
+            <center><b>Sign in</b><br><br>
                 <input type="text" placeholder="example@example.com" name="email"><br><br>
                 <input type="password" placeholder="password" name="password"><br><br>
             <input type="submit" value="OK">

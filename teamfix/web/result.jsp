@@ -1,10 +1,12 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.*" %>
 
 <html>
 <body>
 <div class="wrapper">   
 
-  <jsp:include page="header2.html"/>
+  <jsp:include page="header.html"/>
 
 
   
@@ -28,30 +30,40 @@
             if (cookie1.getName().equals("id_student")) {
                // out.print("Welcome cookie:"+cookie1.getName()+"<br>");
                 //out.print("Welcome, " + cookie1.getValue( )+" <br/>");
-                id=cookie1.getValue( )+"apo cookie";
+                id=cookie1.getValue( );
                 foundCookie = true;
             }
             if (cookie1.getName().equals("firstname")) {
                // out.print("Welcome cookie:"+cookie1.getName()+"<br>");
                 //out.print(" " + cookie1.getValue( )+" <br/>");
-                firstname=cookie1.getValue( )+"apo cookie";
+                firstname=cookie1.getValue( );
                 foundCookie = true;
             }
              if (cookie1.getName().equals("lastname")) {
                // out.print("Welcome cookie:"+cookie1.getName()+"<br>");
                 //out.print(" " + cookie1.getValue( )+" <br/>");
-                lastname=cookie1.getValue( )+"apo cookie";
+                lastname=cookie1.getValue( );
                 foundCookie = true;
             }
         }
         
         
-        if(id!=null || !("-1".equals(id)) || foundCookie){
-            out.print("<br>Welcome, " +firstname );
-            out.print("<br>to deutero= " +lastname );
+        if((!("-1".equals(id)) || foundCookie) && firstname!=null){
+            response.sendRedirect(response.encodeRedirectURL("temp_page?action=student_home"));
+                
+
         }
         else{
-            out.print("<br>Please sign in");
+            out.print("<br>Please sign in (invalid e-mail or password)");
+            
+            out.print("<form method='POST' action='log_in.do'>");
+            
+            out.print("<center><b>Sign in</b><br><br>");
+            out.print("<input type='text' placeholder='example@example.com' name='email'><br><br>");
+            out.print("<input type='text' placeholder='password' name='password'><br><br>");
+            out.print("<input type='submit' value='OK'>");
+            out.print("</center>"); 
+            out.print("</form>");
         }
 %>
 

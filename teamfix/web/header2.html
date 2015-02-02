@@ -2,14 +2,15 @@
 
 <div class="header">
     
-        <a href="index.jsp"><div id="titlos" align="center">
+        <a href="result.jsp"><div id="titlos" align="center">
                 <b>TeamFix</b>
     </div>
         </a>
    <center>
-    <button id="menu" onclick="location.href='index.jsp'"><b>Home</b></button>
-    <button id="menu" onclick="location.href='about.jsp'"><b>About</b></button>
-    <button id="menu" onclick="location.href='how_to.jsp'"><b>How to use</b></button>
-    
+   
+     <form style="display:inline-block;" method="POST" action="log_in.do"><b><input type="submit" value="Home" id="menu"></b></form>
+    <form style="display:inline-block;" method="POST" action="temp_page"><b><input type="hidden" name="action" value="About"><input type="submit" value="About" id="menu"></b></form>
+    <form style="display:inline-block;" method="POST" action="temp_page"><b><input type="hidden" name="action" value="how_to_use"><input type="submit" value="How to use" id="menu"></b></form>
+    <form style="display:inline-block;" method="POST" action="sign_out.do"><input type="submit" value="Sign out" id="menu"></form>
     </center>
 </div> 

@@ -28,8 +28,14 @@ public class Controller extends HttpServlet {
             
             
 		actionMap.put("sign_up", "/sign_up.jsp");
-		actionMap.put("rate", "/image.jsp");
+                actionMap.put("sign_up1", "/sign_up.jsp");
 		actionMap.put("home", "/index.jsp");
+                actionMap.put("how_to_use", "/how_to.jsp");
+                actionMap.put("About", "/about.jsp");
+                actionMap.put("student_home", "/student_home.jsp");
+                actionMap.put("result", "/result.jsp");
+                
+                 
 	}
 
 	/**

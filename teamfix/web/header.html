@@ -15,10 +15,10 @@ $(document).ready(function(){
     </div>
         </a>
    <center>
-    <button id="menu" onclick="location.href='index.jsp'"><b>Home</b></button>
-    <button id="menu" onclick="location.href='about.jsp'"><b>About</b></button>
-    <button id="menu" onclick="location.href='how_to.jsp'"><b>How to use</b></button>
-    <button id="menu" onclick="location.href='sign_up.jsp'"><b>Sign up</b></button>
+
+    <form style="display:inline-block;" method="POST" action="temp_page"><b><input type="hidden" name="action" value="About"><input type="submit" value="About" id="menu"></b></form>
+    <form style="display:inline-block;" method="POST" action="temp_page"><b><input type="hidden" name="action" value="how_to_use"><input type="submit" value="How to use" id="menu"></b></form>
+    <form style="display:inline-block;" method="POST" action="temp_page"><b><input type="hidden" name="action" value="sign_up1"><input type="submit" value="Sign up" id="menu"></b></form>
     <button id="appear"><b>Sign in</b></button>
     </center>
 </div> 
