@@ -17,7 +17,7 @@
             <center><b>Sign in</b><br><br>
                 <input type="text" placeholder="example@example.com" name="email"><br><br>
                 <input type="password" placeholder="password" name="password"><br><br>
-            <input type="submit" value="OK">
+            <input type="submit" value="OK" id="but">
             </center>
         </form>
         </div>
@@ -39,39 +39,25 @@ if(cookies!=null){
         
 }%>
 
-<%
-//<sql:setDataSource var="ds" dataSource="jdbc/teamfix" />
-//<!-- this is from context.xml and web.xml in Configurations files, we take the code from here: http://tomcat.apache.org/tomcat-7.0-doc/jndi-datasource-examples-howto.html -->
-
-//<sql:query dataSource="${ds}" sql="select * from db_student" var="results" />
-%>
-<%
-//<sql:update dataSource="${ds}" sql="INSERT INTO `db_student`(`firstname`, `lastname`, `password`) VALUES (?,?,?)">
-  //  <sql:param>ath</sql:param>
-    //    <sql:param>kar</sql:param>
-      //      <sql:param>redsdfsdf.jpg</sql:param>
-//</sql:update>
-%>
-
-<% /*
-<c:forEach var="image" items="${results.rows}" varStatus="row"> <!-- the results is from sql var="results", varStatus gives you a lot of info about what is happening in the loop -->
-<!-- with var="image" we can gain access to every image attribute we have in the database  -->
-
-
-	<c:set scope="page" var="imgname" value="${image.stem}.${image.image_extension}"></c:set>
-        <!-- set a variable name imgname a value of an image name and .extension of the pics folder we got from the query in the database -->
-        
-
-		<a href="<c:url value="/gallery?action=image&image=${image.id}" />"><!-- if user clicks on the image go to gallery (Controller) with action=image -->
-                        ${image.student_id} kai ${image.firstname}
-		</a>
-
-	
-
-
-</c:forEach>
-*/ %>
-
+            <pre><b>
+<h3>What is TeamFix?</h3>
+                TeamFix is a web application where students can find partners<br>
+                in order to make school or university projects. The problem that<br> 
+                makes teamFix necessary is that students tend to form teams with<br>
+                main and only criterion their friendships and then they fail.<br>
+                </b>
+            </pre>
+<br><br><br><br>
+<h3>How to use it?</h3>
+            <pre>
+<b>
+                1)You have to sign up providing us some information.<br>
+                2)You have to sign in.<br>
+                3)You can start putting on your profile some courses and grades.<br>
+                4)You can create a projects.<br>
+                5)You can search a project to participate in.<br>
+</b>
+            </pre>
     </div>
  
  <%@ include file="footer.html" %>

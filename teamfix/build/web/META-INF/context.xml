@@ -2,6 +2,6 @@
 <Context antiJARLocking="true" path="/WebApplication1">
 <Resource name="jdbc/teamfix" auth="Container" type="javax.sql.DataSource"
                maxActive="100" maxIdle="30" maxWait="10000"
-               username="root" password="" driverClassName="com.mysql.jdbc.Driver"
+               username="root2" password="alexsyna19921924" driverClassName="com.mysql.jdbc.Driver"
                url="jdbc:mysql://localhost:3306/teamfix"/>
 </Context>

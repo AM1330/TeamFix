@@ -73,7 +73,7 @@ result.close();
     
     
         
-              public int DB_project_upload(String id,String name, String date, String max, String interest) throws SQLException, NamingException{
+              public int DB_project_upload(String id,String name, String date, String max, String interest, String email) throws SQLException, NamingException{
 
 
  
@@ -102,11 +102,12 @@ project_id= rs.getInt(1);
 }
 int id2 = Integer.parseInt(id);
 
-PreparedStatement pstmt2 = result.prepareStatement( "INSERT INTO in_project (`student_id`,`interest`,`project_id`) VALUES (?,?,?)");
+PreparedStatement pstmt2 = result.prepareStatement( "INSERT INTO in_project (`student_id`,`interest`,`project_id`,`email`) VALUES (?,?,?,?)");
 
 pstmt2.setInt(1, id2); // set parameter 1 (FIRST_NAME)
 pstmt2.setString(2, interest);
 pstmt2.setInt(3, project_id);
+pstmt2.setString(4, email);
  int rows2 = pstmt2.executeUpdate(); // "rows" save the affected rows
      
 
@@ -122,9 +123,110 @@ result.close();
    }        
            
            
+              public String DB_project_search(String name, String id) throws SQLException, NamingException{
+
+
+ 
+        
+        String DATASOURCE_CONTEXT = "java:comp/env/jdbc/teamfix";
+        
+        Connection result = null;
+        Context initialContext = new InitialContext();
+DataSource datasource = (DataSource)initialContext.lookup(DATASOURCE_CONTEXT);
+            if (datasource != null) {
+                result = datasource.getConnection();
+            }
+
+
+    PreparedStatement pstmt = result.prepareStatement("SELECT * FROM project WHERE (name like ?)");
+
+pstmt.setString(1, "%"+name+"%");
+
+ResultSet rs =  pstmt.executeQuery(); // "rows" save the affected rows
+String ret=null;
+
+if(rs.next()){
+ ret= "<tr><td>"+rs.getInt(1)+"</td> <td>"+rs.getString(2)+"</td></tr><br>";
+}
+
+
+
+
+
+
+result.close();
+
+        
+    
+
+    return(ret);
+   }               
            
-           
-           
+          
+              
+              
+                            public String DB_join_project(String id,String project_id,String interest, String email) throws SQLException, NamingException{
+
+
+ 
+        
+        String DATASOURCE_CONTEXT = "java:comp/env/jdbc/teamfix";
+        String ret=null;
+        Connection result = null;
+        Context initialContext = new InitialContext();
+DataSource datasource = (DataSource)initialContext.lookup(DATASOURCE_CONTEXT);
+            if (datasource != null) {
+                result = datasource.getConnection();
+            }
+
+
+int id2 = Integer.parseInt(id);
+int id3=Integer.parseInt(project_id);
+int my_res=0;
+
+    PreparedStatement pstmt1 = result.prepareStatement("SELECT * FROM in_project WHERE (student_id=? and project_id=?)");
+
+pstmt1.setInt(1,id2);
+pstmt1.setInt(2,id3);
+ResultSet rs =  pstmt1.executeQuery(); // "rows" save the affected rows
+
+
+if(rs.next()){
+ my_res= rs.getInt(1);
+}
+
+
+if(my_res!=0){
+ ret="You are already registered in this project<br><br>";
+}
+else{
+PreparedStatement pstmt2 = result.prepareStatement( "INSERT INTO in_project (`student_id`,`interest`,`project_id`,`email`) VALUES (?,?,?,?)");
+
+pstmt2.setInt(1, id2); // set parameter 1 (FIRST_NAME)
+pstmt2.setString(2, interest);
+pstmt2.setInt(3, id3);
+pstmt2.setString(4, email);
+int rows2 = pstmt2.executeUpdate(); // "rows" save the affected rows
+ret="Success!";     
+}
+
+
+
+result.close();
+
+        
+    
+
+    return(ret);
+   }      
+              
+              
+              
+              
+              
+              
+              
+              
            
     
 }
@@ -138,11 +240,3 @@ result.close();
 
 
 
-        
-  /*  PreparedStatement pstmt2 = result.prepareStatement( "INSERT INTO in_project (`student_id`,`project_id`,`interest_in_days`) VALUES (?,?,?)");
-
-pstmt2.setString(1, id); // set parameter 1 (FIRST_NAME)
-pstmt2.setInt(2, 5);
-pstmt2.setString(3, interest);
- int rows2 = pstmt2.executeUpdate(); // "rows" save the affected rows
-        */

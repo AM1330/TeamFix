@@ -14,10 +14,10 @@
     <div class="content">
         <div id="login">
         <form method="POST" action="log_in.do">
-            <center><b>log in</b><br><br>
-                <input type="text" placeholder="username" name="username"><br><br>
+            <center><b>Sign in</b><br><br>
+                <input type="text" placeholder="example@example.com" name="email"><br><br>
                 <input type="password" placeholder="password" name="password"><br><br>
-            <input type="submit" value="OK">
+            <input type="submit" value="OK" id="but">
             </center>
         </form>
         </div>
@@ -37,7 +37,7 @@
                 Enter your lastname<br> <input type="text" name="lastname" placeholder="Lastname" required/><br><br>
                 Enter your email<br> <input type="text" name="email" placeholder="example@example.com" pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$" required/><br><br>
                 Enter your password<br> <input type="password" name="password" placeholder="Password" required/><br>
-              <input type="submit" value="OK"/>
+              <input type="submit" value="OK" id="but"/>
             </form>
             
         </c:otherwise>
