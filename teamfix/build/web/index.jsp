@@ -22,42 +22,43 @@
         </form>
         </div>
         
-            <%        Cookie[] cookies = request.getCookies();
-        boolean foundCookie = false;
-if(cookies!=null){
-        for(int i = 0; i < cookies.length; i++) { 
-            Cookie cookie1 = cookies[i];
-            if (cookie1.getName().equals("log")) {
-                out.print("JUST TESTING");
-                out.print("Value: " + cookie1.getValue( )+" <br/>");
-                foundCookie = true;
-                 String site = new String("result.jsp");
-                   response.setStatus(response.SC_MOVED_TEMPORARILY);
-                   response.setHeader("Location", site); 
-            }
-        } 
-        
-}%>
 
-            <pre><b>
+
+               <form method="post" action="temp_page" id="search_index">
+        <input type="hidden" name="action" value="search">
+        <input type="text" name="project_name" placeholder="Search project by name" size="25" required>        <input type="submit" id="search_button" value=" ">
+    </form>
+
+
+        <div id="mytext">
+<pre>            
 <h3>What is TeamFix?</h3>
+
+        <b>
                 TeamFix is a web application where students can find partners<br>
                 in order to make school or university projects. The problem that<br> 
                 makes teamFix necessary is that students tend to form teams with<br>
-                main and only criterion their friendships and then they fail.<br>
-                </b>
+                main and only criterion their friendships. Failure is unavoidable.<br>
+        </b>
             </pre>
 <br><br><br><br>
+<pre>
 <h3>How to use it?</h3>
-            <pre>
+            
 <b>
                 1)You have to sign up providing us some information.<br>
                 2)You have to sign in.<br>
                 3)You can start putting on your profile some courses and grades.<br>
-                4)You can create a projects.<br>
+                4)You can create a project.<br>
                 5)You can search a project to participate in.<br>
 </b>
             </pre>
+
+
+        </div>
+
+
+
     </div>
  
  <%@ include file="footer.html" %>

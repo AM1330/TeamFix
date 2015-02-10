@@ -50,7 +50,7 @@ public class Sign_up_functionality {
       
 
     PreparedStatement pstmt = result.prepareStatement(
-   "INSERT INTO db_student (`firstname`, `lastname`, `email`,`password`) VALUES (?,?,?,?)");
+   "INSERT INTO db_student (`firstname`, `lastname`, `email`,`password`) VALUES (?,?,?, AES_ENCRYPT(?,'usetheforce'))");
 
 pstmt.setString(1, firstname); // set parameter 1 (FIRST_NAME)
 pstmt.setString(2, lastname); // set parameter 2 (ID)

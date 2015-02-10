@@ -1,18 +1,11 @@
 package com.example.model;
 
-import static java.rmi.server.LogStream.log;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.*;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.naming.*;
-import javax.sql.*;
 
 public class log_in_functionality{
    public List getStudent(String email,String pass) {
@@ -23,42 +16,16 @@ public class log_in_functionality{
      String lastname = null;
      String email_taken = null;
      List types = new ArrayList();
-
+     Connection result;
+     ConnectionManager cm= new ConnectionManager();
+     
+    try  {      
         
-    try {
-        
-        
-        String DATASOURCE_CONTEXT = "java:comp/env/jdbc/teamfix";
-        
-        Connection result = null;
-        try {
-            Context initialContext = new InitialContext();
-            if ( initialContext == null){
-                log("JNDI problem. Cannot get InitialContext.");
-            }
-            DataSource datasource = (DataSource)initialContext.lookup(DATASOURCE_CONTEXT);
-            if (datasource != null) {
-                result = datasource.getConnection();
-            }
-            else {
-                log("Failed to lookup datasource.");
-            }
-        }
-        catch ( NamingException ex ) {
-            log("Cannot get connection: " + ex);
-        }
-        catch(SQLException ex){
-            log("Cannot get connection: " + ex);
-        }
+result=ConnectionManager.getConnection();
       
-        /*Statement stmt = null;
-        String query = "INSERT INTO `db_student`(`firstname`, `lastname`, `password`) VALUES ('"+firstname+"','"+lastname+"','"+pass+"')";
-        
-        stmt = result.createStatement();
-        int rs = stmt.executeUpdate(query);
-        */
+
     PreparedStatement pstmt = result.prepareStatement(
-   "select * from db_student where email=? and password=?");
+   "select * from db_student where email=? and AES_DECRYPT(password, 'usetheforce')=?");
 
 pstmt.setString(1, email); // set parameter 1 (FIRST_NAME)
 pstmt.setString(2, pass); // set parameter 2 (ID)

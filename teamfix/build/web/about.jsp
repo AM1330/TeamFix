@@ -11,7 +11,7 @@
                         TeamFix is a web application where students can find partners<br>
                          in order to make school or university projects. The problem that<br> 
                         makes teamFix necessary is that students tend to form teams with<br>
-                        main and only criterion their friendships and then they fail.<br>
+                        main and only criterion their friendships. Failure is unavoidable.<br>
                 </b>
             </pre>
         </div>

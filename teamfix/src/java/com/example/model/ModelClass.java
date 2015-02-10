@@ -6,6 +6,7 @@
  */
 package com.example.model;
 
+import static java.lang.Integer.parseInt;
 import static java.rmi.server.LogStream.log;
 import java.sql.*;
 import java.util.logging.Level;
@@ -140,17 +141,26 @@ DataSource datasource = (DataSource)initialContext.lookup(DATASOURCE_CONTEXT);
 
     PreparedStatement pstmt = result.prepareStatement("SELECT * FROM project WHERE (name like ?)");
 
-pstmt.setString(1, "%"+name+"%");
+pstmt.setString(1, name+"%");
 
 ResultSet rs =  pstmt.executeQuery(); // "rows" save the affected rows
 String ret=null;
+ResultSet rs2;
 
-if(rs.next()){
- ret= "<tr><td>"+rs.getInt(1)+"</td> <td>"+rs.getString(2)+"</td></tr><br>";
+while(rs.next()){
+ ret= "<tr><td>"+rs.getInt(1)+"</td> <td style=\"padding-left:20px;\">"+rs.getString(2)+"</td><td style=\"padding-left:20px;\">"+rs.getString(3)+"</td><td style=\"padding-left:20px;\">"+rs.getString(4)+"</td>";
+
+ pstmt = result.prepareStatement("SELECT * FROM in_project WHERE (project_id=?)");
+
+pstmt.setInt(1, rs.getInt(1));
+
+rs2 =  pstmt.executeQuery(); // "rows" save the affected rows
+while(rs2.next()){
+ret=ret+"<td style=\"padding-left:20px;\">"+rs2.getString(3)+" days</td>";
 }
 
-
-
+ret=ret+"</tr><br>";
+}
 
 
 
@@ -183,6 +193,8 @@ DataSource datasource = (DataSource)initialContext.lookup(DATASOURCE_CONTEXT);
 int id2 = Integer.parseInt(id);
 int id3=Integer.parseInt(project_id);
 int my_res=0;
+int max=0;
+int cur_num=0;
 
     PreparedStatement pstmt1 = result.prepareStatement("SELECT * FROM in_project WHERE (student_id=? and project_id=?)");
 
@@ -195,6 +207,33 @@ if(rs.next()){
  my_res= rs.getInt(1);
 }
 
+
+pstmt1 = result.prepareStatement("SELECT * FROM project WHERE (project_id=?)");
+
+
+pstmt1.setInt(1,id3);
+rs =  pstmt1.executeQuery(); // "rows" save the affected rows
+
+
+if(rs.next()){
+ max= parseInt(rs.getString(4));
+}
+
+pstmt1 = result.prepareStatement("SELECT COUNT(*) AS total FROM in_project WHERE (project_id=?)");
+
+
+pstmt1.setInt(1,id3);
+rs =  pstmt1.executeQuery(); // "rows" save the affected rows
+
+
+if(rs.next()){
+ cur_num= rs.getInt("total");
+}
+
+if(cur_num>=max){
+ret="Sorry, we are full<br><br>";
+return(ret);
+}
 
 if(my_res!=0){
  ret="You are already registered in this project<br><br>";

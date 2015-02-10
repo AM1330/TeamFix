@@ -13,7 +13,7 @@
                 1)You have to sign up providing us some information.<br>
                 2)You have to sign in.<br>
                 3)You can start putting on your profile some courses and grades.<br>
-                4)You can create a projects.<br>
+                4)You can create a project.<br>
                 5)You can search a project to participate in.<br>
 </b>
             </pre>

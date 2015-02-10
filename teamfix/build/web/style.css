@@ -38,12 +38,11 @@ body{
 
 .footer{
     width:100%;
-    height:30%;
+    height:300px;
     position:absolute;
     background-color: black;
     color:white;
-    margin-top:100%;
-    
+    margin-top:70%;  
 }
 #main_content{
     background-color:white;
@@ -52,11 +51,16 @@ body{
     margin-right:5%;
     margin-top:1%;
     width:90%;
-    height:80%;
+    height:90%;
     border:1px solid black;
     -webkit-box-shadow: 0px 0px 76px 8px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 76px 8px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 76px 8px rgba(0,0,0,0.75);
+        overflow: auto;
+}
+
+#forms{
+    display:inline-block;
 }
 
 #login{
@@ -72,6 +76,7 @@ body{
     -webkit-box-shadow: 0px 0px 76px 8px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 76px 8px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 76px 8px rgba(0,0,0,0.75);
+    z-index: 5;
 }
 
 #student_home_courses{
@@ -86,8 +91,15 @@ body{
 #new_project{
     display:inline-block;
     width:200px;
-    height:250px;
+    height:150px;
+    margin-left: 25px;
+}
+#join_project_search{
+    display:inline-block;
+    width:200px;
     margin-left: 50px;
+    float:right;
+    top:0px;
 }
 
 #appear{
@@ -121,6 +133,7 @@ body{
     width:50px;
     height:50px;
     display:inline;
+    color:#007E08;
 }
 #titlos:hover{
     text-shadow: 1px 0px grey;
@@ -149,6 +162,17 @@ height:25px;
     opacity:0.6;
     cursor:pointer;
 }
+
+#search_index{
+    float:right; 
+    top:0px;
+    border:0px solid black;
+    -webkit-box-shadow: 0px 0px 76px 8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 76px 8px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 76px 8px rgba(0,0,0,0.75);
+}
+
+
 #but{
     background-color: black;
     color:white;
@@ -157,4 +181,187 @@ height:25px;
 #but:hover{
     cursor:pointer;
     color:#0099FF;
+}
+#social:hover{
+    cursor:pointer;
+    opacity:0.6;
+}
+#my_project_stud{
+background-color: #F7F8F7;
+width:320px;
+height:200px; 
+overflow-y: scroll; 
+overflow-x: hidden; 
+display: inline-block;
+}
+#my_courses_stud{
+background-color: #F7F8F7;
+width:220px;
+height:200px;
+overflow-y: scroll;
+overflow-x: hidden;
+display: inline-block;
+}
+
+#search_project_res{
+background-color: #F7F8F7; width:720px; height:200px; overflow:auto; display: inline-block; margin-left: auto; margin-right:auto;
+}
+@media screen and (max-width:1100px) {
+    
+    .content{
+    width:90%;
+    height:60%;
+    position:absolute;
+    margin-top:200px;
+    margin-left:5%;
+    margin-right:5%;
+    
+}
+    
+.footer{
+    width:100%;
+    height:300px;
+    position:absolute;
+    background-color: black;
+    color:white;
+    margin-top:110%;
+    display:block;
+}
+    
+    #my_project_stud{
+background-color: #F7F8F7;
+width:220px;
+height:200px; 
+overflow-y: scroll; 
+overflow-x: hidden; 
+display: inline-block;
+}
+
+  #main_content{
+      z-index: 1;
+    background-color:white;
+    position:absolute;
+    margin-left:0%;
+    margin-right:0%;
+    margin-top:1%;
+    width:100%;
+    height:100%;
+    overflow: auto;
+}
+
+#new_project{
+    display:inline-block;
+    width:200px;
+    height:150px;
+    margin-left: 10px;
+}
+
+}
+
+@media screen and (max-width:730px) {
+    
+
+    
+    #search_index{
+        float:center;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+    }
+    .content{
+    width:90%;
+    height:60%;
+    position:absolute;
+    margin-top:90px;
+    margin-left:5%;
+    margin-right:5%;
+    text-align: center;
+}
+    
+.footer{
+    width:100%;
+    height:300px;
+    position:absolute;
+    background-color: black;
+    color:white;
+    margin-top:220%;
+    display:block;
+}
+
+#mytext{
+    display:none
+}
+  #main_content{
+      z-index: 1;
+    background-color:white;
+    position:absolute;
+    margin-left:0%;
+    margin-right:0%;
+    margin-top:1%;
+    width:100%;
+    height:100%;
+    overflow: auto;
+}
+
+#my_project_stud{
+background-color: #F7F8F7;
+width:220px;
+height:200px; 
+overflow-y: scroll; 
+overflow-x: hidden; 
+display: inline-block;
+margin-top:5px;
+margin-left:0px;
+}
+#my_courses_stud{
+background-color: #F7F8F7;
+width:220px;
+height:200px;
+overflow-y: scroll;
+overflow-x: hidden;
+display: inline-block;
+margin-top:5px;
+margin-left:0px;
+}
+#join_project_search{
+    display:inline-block;
+    width:200px;
+    float:right;
+    top:0px;
+}
+#new_project{
+    display:inline-block;
+    width:200px;
+    height:150px;
+    margin-left: 0px;
+}
+
+}
+
+@media screen and (max-height:530px) {
+    .footer{
+    display:none;
+}    
+
+ #main_content{
+      z-index: 1;
+    background-color:white;
+    position:absolute;
+    margin-left:0%;
+    margin-right:0%;
+    margin-top:1%;
+    width:100%;
+    height:120%;
+    overflow: auto;
+}
+
+    .content{
+    width:90%;
+    height:60%;
+    position:absolute;
+    margin-top:80px;
+    margin-left:5%;
+    margin-right:5%;
+    text-align: center;
+}
 }

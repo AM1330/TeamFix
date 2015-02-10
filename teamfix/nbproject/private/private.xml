@@ -3,19 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/WebApplication1/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/WebApplication1/build/web/style.css</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/WebApplication1/web/student_home.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/WebApplication1/src/java/com/example/web/Controller.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/WebApplication1/web/index.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/WebApplication1/src/java/com/example/model/Sign_up_functionality.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/WebApplication1/src/java/com/example/web/Sign_up.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/WebApplication1/web/result.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/WebApplication1/src/java/com/example/web/Course_upload.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/WebApplication1/web/sign_up.jsp</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/WebApplication1/src/java/com/example/web/Sign_out.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/WebApplication1/web/header.html</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/WebApplication1/src/java/com/example/model/ModelClass.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/web/style.css</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/web/index.jsp</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/web/student_home.jsp</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/web/about.jsp</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/web/header2.html</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/web/result.jsp</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/web/header.html</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/web/search_res.jsp</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/src/java/com/example/web/Sign_up.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/web/how_to.jsp</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/web/sign_up.jsp</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/src/java/com/example/web/Course_upload.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/src/java/com/example/model/ModelClass.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/src/java/com/example/web/Controller.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/teamfix/web/WEB-INF/web.xml</file>
         </group>
     </open-files>
 </project-private>

@@ -34,6 +34,7 @@ public class Controller extends HttpServlet {
                 actionMap.put("About", "/about.jsp");
                 actionMap.put("student_home", "/student_home.jsp");
                 actionMap.put("result", "/result.jsp");
+                actionMap.put("search", "/search_res.jsp");
                 
                  
 	}
@@ -55,6 +56,11 @@ public class Controller extends HttpServlet {
 		if (action == null || !actionMap.containsKey(action))
 			action = "home";
 
+                if("search".equals(action)){
+                    request.setAttribute("from_search", true);
+                   request.setAttribute("searched_name",request.getParameter("project_name"));
+                }
+                
 		// Forward to the requested page.
 		request.getRequestDispatcher(actionMap.get(action)).forward(request,
 				response);
